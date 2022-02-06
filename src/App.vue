@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Vuelog</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -23,11 +23,29 @@
       </div>
     </div>
   </nav>
+
+  <router-link to="/">홈페이지</router-link>
+  <router-link to="/list">리스트페이지</router-link>
+  <router-link to="/detail">상세페이지</router-link>
+
+  <div class="mt-4">
+    <router-view :blogContents="blogContents"></router-view>
+  </div>
+
+  <!-- <List :blogContents="blogContents" /> -->
 </template>
 
 <script>
+// import List from "./components/List.vue";
+import data from "./assets/blog.js";
+
 export default {
   name: "App",
+  data() {
+    return {
+      blogContents: data,
+    };
+  },
   components: {},
 };
 </script>
