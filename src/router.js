@@ -5,7 +5,7 @@ import Detail from "./components/Detail.vue";
 
 const routes = [
   {
-    path: "/detail",
+    path: "/detail/:id(\\d+)",
     component: Detail,
   },
   {
@@ -14,6 +14,10 @@ const routes = [
   },
   {
     path: "/",
+    component: Home,
+  },
+  {
+    path: "/:anithing(.*)",
     component: Home,
   },
 ];
